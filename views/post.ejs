@@ -1,0 +1,49 @@
+<!-- views/post.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!--call in the css for main page-->
+    <title><%= post ? "Edit Post" : "Create Post" %></title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    //to
+    <h1><%= post ? "Edit Post" : "Create Post" %></h1>
+    <article>
+    <form method="POST" action="/post">
+        <% if (post) { %>
+            <input type="hidden" name="id" value="<%= post.blog_id %>">
+        <% } %>
+
+        <!--title input-->
+        <label for="title">Title:</label>
+        <input type="text" name="title" value="<%= post ? post.title : '' %>" required>
+        <br>
+
+        <!--category input-->
+        <label for="category">Category:</label>
+        <select name="category" id="category">
+            <option value="General" <%= post && post.category === 'General' ? 'selected' : '' %>>General</option>
+            <option value="News" <%= post && post.category === 'News' ? 'selected' : '' %>>News</option>
+            <option value="Personal" <%= post && post.category === 'Personal' ? 'selected' : '' %>>Personal</option>
+            <option value="Sports" <%= post && post.category === 'Sports' ? 'selected' : '' %>>Sports</option>
+            <option value="Humor" <%= post && post.category === 'Humor' ? 'selected' : '' %>>Humor</option>
+        </select>
+
+
+        <!--blog content input-->
+        <label for="body">Content:</label>
+        <textarea name="body" rows="10" required><%= post ? post.body : '' %></textarea>
+        <br>
+
+        <!--submit button-->
+        <button type="submit"><%= post ? 'Update' : 'Publish' %></button>
+    </form>
+    </article>
+
+    <br>
+    <!--back to blog button -->
+    <a href="/"><button type="button">Back to Blog</button></a>
+</body>
+</html>

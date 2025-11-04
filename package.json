@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.3",
+    "body-parser": "^2.2.0",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "method-override": "^3.0.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "pg": "^8.16.3"
+  },
+  "name": "hw1",
+  "version": "1.0.0",
+  "description": "cs312 hw1",
+  "main": "app.js",
+  "scripts": {
+    "test": "(index.js)"
+  },
+  "author": "",
+  "license": "ISC"
+}

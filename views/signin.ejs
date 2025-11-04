@@ -1,0 +1,20 @@
+<!-- views/signin.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+   <head>
+    <!--call in the css for main page-->
+    <title>Signin Page</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+<h1>Sign In</h1>
+    <form action="/signin" method="POST">
+    <input name="user_id" placeholder="User ID" required><br>
+    <input name="password" type="password" placeholder="Password" required><br>
+    <button type="submit">Sign In</button>
+    </form>
+    <a href="/signup">Need an account? Sign up</a>
+</body>
+</html>

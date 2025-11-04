@@ -1,0 +1,51 @@
+<!-- views/index.ejs -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!--call in the css for main page-->
+    <title>Blog Page</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+
+<body>
+    <!--add image to background-->
+    <div id="glitter"></div>
+        <!--add blog title & post button-->
+        <h1>Welcome to The Blog!</h1>
+
+        <% if (user) { %>
+            <a href="/signout"><button>Logout</button></a>
+        <% } %>
+        <% if (!user) { %>
+            <a href="/signin"><button>Sign In</button></a>
+            <a href="/signup"><button>Sign Up</button></a>
+        <% } %>
+        <% if (user) { %>
+            <a href="/post"><button>Create New Post</button></a>
+        <% } %>
+
+        <div class="category-options">
+        <% posts.forEach(post => { %>
+            <!--display title, category, and content for each post via loop-->
+            <article>
+                <h2><%= post.title %></h2>
+                <p class="author">Author: <%= post.creator_name %></p>
+                <p class="category">Category: <%= post.category || 'None' %></p>
+                <p><%= post.body %></p>
+                <p class="timestamp">Posted at: <%= post.date_created.toLocaleString() %></p>
+                
+                <!--edit & delete buttons -->
+                <% if (user && user.user_id === post.creator_user_id) { %>
+                    <form method="POST" action="/delete/<%= post.blog_id %>" style="display:inline;">
+                        <button type="submit" class="delete-button">Delete</button>
+                    </form>
+                    <a href="/post/<%= post.blog_id %>">
+                        <button type="button" class="update-button">Edit</button>
+                    </a>
+                <% } %>
+            </article>
+        <% }) %>
+        </div>
+</body>
+</html>

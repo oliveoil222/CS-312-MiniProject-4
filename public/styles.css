@@ -1,0 +1,90 @@
+/* public/styles.css */
+
+/* create base for main page */
+body {
+    display: block;
+    background-color: rgb(0, 0, 0);
+    font-family: Luminari, fantasy, sans-serif;
+    font-size: 18px; 
+    text-align: center;}
+
+/* style page titles */
+h1{
+    color: white;
+    text-shadow: 0 0 10px rgb(223, 34, 151);
+    font-size: 3em;
+    margin-bottom: 0.5em; }
+
+/* style each post */
+.category-options label {
+    display: block;
+    margin-bottom: 2em;
+    font-size: 1.25em;  }
+
+/* style each post container */
+article {
+    border: 0.0625em solid  #59e4f9;
+    padding: 3em;
+    margin: 1.875em auto;
+    background-color:  rgb(223, 34, 151);
+    max-width: 25em;
+    text-align: left;
+    box-shadow: 0 0.25em 0.375em rgba(255, 255, 255, 0.1);
+    display: block;
+    flex-direction: column;
+    justify-content: space-between; }
+
+/* style post titles */
+article form {
+    display: flex;
+    flex-direction: column;
+    gap:  1em; }
+
+/* style post author */  
+h3{
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 0.5em; }
+
+/*style non-delete buttons */
+button {
+    border: 2px solid #000000;
+    font-family: Luminari, fantasy, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: #59e4f9;
+    color: rgb(0, 0, 0);
+    padding: 0.625em 1.875em;
+    cursor: pointer;
+    border-radius: 1.875em;
+    text-align: center; }
+
+/*change hover color for non-delete buttons */
+button:hover { background-color: #31b8cd; }
+
+/* style delete button */
+.delete-button {
+     border: 2px solid #000000;
+    font-family: Luminari, fantasy, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: #e72121;
+    color: rgb(0, 0, 0);
+    padding: 0.625em 1.875em;
+    cursor: pointer;
+    border-radius: 1.875em;
+    text-align: center; }
+
+/* change hover color for delete button */
+.delete-button:hover { background-color: #bf3005; }
+
+/* add background image */
+#glitter{
+position:absolute;
+top:3em;
+left:0em;
+height:43.75em;
+width:43.75em;
+background-size:contain;
+z-index:-1;
+background: url('https://pngimg.com/d/star_PNG76834.png') no-repeat; }
